@@ -1,5 +1,7 @@
 package fr.iut.montreuil.S04_R02_2023_07_QuiZaZaa_questionnaire_sme.modeles;
 
+import fr.iut.montreuil.S04_R02_2023_07_QuiZaZaa_questionnaire_sme.entities.bo.FichierQuestionBO;
+
 public class QuestionBOBuilder {
 
 	private int idQuestionnaire;
@@ -51,6 +53,10 @@ public class QuestionBOBuilder {
 
 	public int getIdQuestion() {
 		return idQuestion;
+	}
+	
+	public FichierQuestionBO build() {
+		return new FichierQuestionBO(this);
 	}
 
 	public String getLangue() {

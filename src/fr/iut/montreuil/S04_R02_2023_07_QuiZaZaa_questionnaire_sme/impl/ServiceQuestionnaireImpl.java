@@ -11,11 +11,12 @@ import java.util.ArrayList;
 import fr.iut.montreuil.S04_R02_2023_07_QuiZaZaa_questionnaire_sme.entities.bo.FichierQuestionBO;
 import fr.iut.montreuil.S04_R02_2023_07_QuiZaZaa_questionnaire_sme.entities.dto.QuestionDTO;
 import fr.iut.montreuil.S04_R02_2023_07_QuiZaZaa_questionnaire_sme.modeles.IServiceQuestionnaire;
+import fr.iut.montreuil.S04_R02_2023_07_QuiZaZaa_questionnaire_sme.modeles.QuestionBOBuilder;
 
 public class ServiceQuestionnaireImpl implements IServiceQuestionnaire {
 
 	@Override
-	public ArrayList<QuestionDTO> fournirUnQuestionnaire(String URL_CSV) // excepetion si idquestionnaire existe pas {
+	public ArrayList<QuestionDTO> fournirUnQuestionnaire(String URL_CSV) { // excepetion si idquestionnaire existe pas {
 		return null;
 	}
 	
@@ -23,16 +24,24 @@ public class ServiceQuestionnaireImpl implements IServiceQuestionnaire {
 		Path pathToFile = Paths.get(URL_CSV);
 		
 		FichierQuestionBO question;
-		ArrayList<FichierQuestionBO> listeQuestions;
+		ArrayList<FichierQuestionBO> listeQuestions = new ArrayList<FichierQuestionBO>();
 		
 		try (BufferedReader br = Files.newBufferedReader(pathToFile, StandardCharsets.UTF_8)) {
             String line = br.readLine();  //Read the first line from the text file
             while (line != null) {  // loop until all lines are read
             	String arguments[] = line.split(";");
-            	
             	//if manque un argument ?
-            	
-//            	question = new FichierQuestionBO();
+            	// if to parse int fonctionne pas
+            	question = new QuestionBOBuilder()
+            			.withIdQuestionnaire(Integer.parseInt(arguments[1]))
+            			.withIdQuestion(Integer.parseInt(arguments[2]))
+            			.withLangue(arguments[3])
+            			.withQuestion(arguments[4])
+            			.withReponse(arguments[5])
+            			.withDifficulte(Integer.parseInt(arguments[6]))
+            			.withSource(arguments[7])
+            			.build();
+            	listeQuestions.add(question);
                 line = br.readLine(); //read next line before looping, if end of file reached, line would be null
             }
             
@@ -40,7 +49,7 @@ public class ServiceQuestionnaireImpl implements IServiceQuestionnaire {
             ioe.printStackTrace();
         }
 
-		
+		return listeQuestions;
 
 	}
 
