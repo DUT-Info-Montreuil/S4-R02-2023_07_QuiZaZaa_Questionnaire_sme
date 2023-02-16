@@ -12,7 +12,20 @@ public class QuestionDTO {
 	private String reponse;
 	private String source;
 	private int difficulte;
-	
+
+	public QuestionDTO(int idQuestion, int nbBonneReponses, int nbMauvaisesReponses, int idQuestionnaire, String langue,
+					   String question, String reponse, String source, int difficulte) {
+		this.idQuestion = idQuestion;
+		this.nbBonneReponses = nbBonneReponses;
+		this.nbMauvaisesReponses = nbMauvaisesReponses;
+		this.idQuestionnaire = idQuestionnaire;
+		this.langue = langue;
+		this.question = question;
+		this.reponse = reponse;
+		this.source = source;
+		this.difficulte = difficulte;
+	}
+
 	public int getIdQuestion() {
 		return idQuestion;
 	}
