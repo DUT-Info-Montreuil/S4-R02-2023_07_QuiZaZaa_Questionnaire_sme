@@ -7,9 +7,11 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 public class ServiceQuestionnaireTest {
 
-    IServiceQuestionnaire serviceQuestionnaire;
+    private IServiceQuestionnaire serviceQuestionnaire;
 
     @BeforeEach
     public void init(){
@@ -19,9 +21,10 @@ public class ServiceQuestionnaireTest {
     @Test
     public void recupQuestionnaireOKTest() {
         serviceQuestionnaire = new ServiceQuestionnaireImplMokCasOK();
-        ArrayList<QuestionDTO> oui = serviceQuestionnaire.fournirUnQuestionnaire(" ");
-        //Assertions.assertEquals();
+        ArrayList<QuestionnaireDTO> bien =
+                serviceQuestionnaire.fournirListeQuestionnaires("e");
+
+
+        assertIterableEquals(bien, serviceQuestionnaire.fournirListeQuestionnaires("e"));
     }
-
-
 }
