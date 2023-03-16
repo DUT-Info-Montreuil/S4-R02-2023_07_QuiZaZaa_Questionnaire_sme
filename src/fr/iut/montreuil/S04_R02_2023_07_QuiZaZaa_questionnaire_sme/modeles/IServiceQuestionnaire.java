@@ -9,5 +9,11 @@ public interface IServiceQuestionnaire {
 
 	public ArrayList<QuestionnaireDTO> fournirListeQuestionnaires (String URL_CSV);
 	public ArrayList<QuestionDTO> chargerCSV (String URL_CSV);
+
+	/*------------------------------------------*/
+
+	public QuestionDTO questionMeilleurTaux(QuestionnaireDTO questionnaire);
+	public QuestionDTO questionPireTaux(QuestionnaireDTO questionnaire);
+	public double tauxBonneReponse(QuestionDTO question);
 	
 }
