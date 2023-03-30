@@ -37,9 +37,6 @@ public class FichierQuestionBO {
 	public int getIdQuestion() {
 		return idQuestion;
 	}
-	public void setIdQuestion(int idQuestion) {
-		this.idQuestion = idQuestion;
-	}
 	public int getIdQuestionnaire() {
 		return idQuestionnaire;
 	}

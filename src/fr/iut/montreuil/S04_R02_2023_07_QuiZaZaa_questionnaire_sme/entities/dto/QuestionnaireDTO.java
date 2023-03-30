@@ -4,19 +4,28 @@ import java.util.ArrayList;
 
 public class QuestionnaireDTO {
 	
-	private int idQuestion;
+	private static int compteurId = 0;
+	
+	private int idQuestionnaire;
 	private ArrayList<QuestionDTO> listeQuestions;
-	public int getIdQuestion() {
-		return idQuestion;
+	
+	public QuestionnaireDTO() {
+		super();
+		this.idQuestionnaire = compteurId;
+		this.compteurId++;
+		this.listeQuestions = new ArrayList<QuestionDTO>();
 	}
-	public void setIdQuestion(int idQuestion) {
-		this.idQuestion = idQuestion;
+	
+	public int idQuestionnaire() {
+		return idQuestionnaire;
 	}
+	
+	public void ajouterQuestion(QuestionDTO quest) {
+		this.listeQuestions.add(quest);
+	}
+	
 	public ArrayList<QuestionDTO> getListeQuestions() {
-		return listeQuestions;
-	}
-	public void setListeQuestions(ArrayList<QuestionDTO> listeQuestions) {
-		this.listeQuestions = listeQuestions;
+		return this.listeQuestions;
 	}
 	
 
