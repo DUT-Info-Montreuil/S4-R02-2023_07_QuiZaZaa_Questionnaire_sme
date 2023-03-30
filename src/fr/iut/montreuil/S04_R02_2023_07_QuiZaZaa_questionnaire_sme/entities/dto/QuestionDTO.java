@@ -61,6 +61,15 @@ public class QuestionDTO {
 	public void setSource(String source) {
 		this.source = source;
 	}
+
+	public StatsQuestionDTO getStats() {
+		return stats;
+	}
+
+	public void setStats(StatsQuestionDTO stats) {
+		this.stats = stats;
+	}
+
 	public int getDifficulte() {
 		return difficulte;
 	}

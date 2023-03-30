@@ -17,5 +17,4 @@ public interface IServiceQuestionnaire {
 	public double tauxBonneReponse(QuestionDTO question);
 	public void incrementationQuestionnaire(QuestionnaireDTO questionnaire);
 	
-	
 }

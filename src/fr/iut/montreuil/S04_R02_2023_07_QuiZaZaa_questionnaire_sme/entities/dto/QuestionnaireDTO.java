@@ -8,15 +8,24 @@ public class QuestionnaireDTO {
 	
 	private int idQuestionnaire;
 	private ArrayList<QuestionDTO> listeQuestions;
-	
-	public QuestionnaireDTO() {
-		super();
+	private StatsQuestionnaireDTO stats;
+
+	public QuestionnaireDTO(StatsQuestionnaireDTO stats) {
 		this.idQuestionnaire = compteurId;
 		this.compteurId++;
 		this.listeQuestions = new ArrayList<QuestionDTO>();
+		this.stats = stats;
+	}
+
+	public StatsQuestionnaireDTO getStats() {
+		return stats;
+	}
+
+	public void setStats(StatsQuestionnaireDTO stats) {
+		this.stats = stats;
 	}
 	
-	public int idQuestionnaire() {
+	public int getIdQuestionnaire() {
 		return idQuestionnaire;
 	}
 	
