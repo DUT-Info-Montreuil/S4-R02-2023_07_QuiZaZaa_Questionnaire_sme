@@ -1,18 +1,19 @@
 package fr.iut.montreuil.S04_R02_2023_07_QuiZaZaa_questionnaire_sme.entities.bo;
 
+import fr.iut.montreuil.S04_R02_2023_07_QuiZaZaa_questionnaire_sme.modeles.Langues;
 import fr.iut.montreuil.S04_R02_2023_07_QuiZaZaa_questionnaire_sme.modeles.QuestionBOBuilder;
 
 public class FichierQuestionBO {
 	
 	private int idQuestionnaire;
 	private int idQuestion;
-	private String langue;
+	private Langues langue;
 	private String question;
 	private String reponse;
 	private int difficulte;
 	private String source;
 	
-	public FichierQuestionBO(int idQuestionnaire, int idQuestion, String langue, String question, String reponse,
+	public FichierQuestionBO(int idQuestionnaire, int idQuestion, Langues langue, String question, String reponse,
 			int difficulte, String source) {
 		super();
 		this.idQuestion = idQuestion;
@@ -43,10 +44,10 @@ public class FichierQuestionBO {
 	public void setIdQuestionnaire(int idQuestionnaire) {
 		this.idQuestionnaire = idQuestionnaire;
 	}
-	public String getLangue() {
+	public Langues getLangue() {
 		return langue;
 	}
-	public void setLangue(String langue) {
+	public void setLangue(Langues langue) {
 		this.langue = langue;
 	}
 	public String getQuestion() {

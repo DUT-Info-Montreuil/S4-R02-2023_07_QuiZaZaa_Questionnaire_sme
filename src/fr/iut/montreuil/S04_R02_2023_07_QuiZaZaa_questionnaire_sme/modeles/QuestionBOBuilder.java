@@ -6,7 +6,7 @@ public class QuestionBOBuilder {
 
 	private int idQuestionnaire;
 	private int idQuestion;
-	private String langue;
+	private Langues langue;
 	private String question;
 	private String reponse;
 	private int difficulte;
@@ -22,7 +22,7 @@ public class QuestionBOBuilder {
 		return this;
 	}
 	
-	public QuestionBOBuilder withLangue (String langue) {
+	public QuestionBOBuilder withLangue (Langues langue) {
 		this.langue = langue;
 		return this;
 	}
@@ -59,7 +59,7 @@ public class QuestionBOBuilder {
 		return new FichierQuestionBO(this);
 	}
 
-	public String getLangue() {
+	public Langues getLangue() {
 		return langue;
 	}
 
