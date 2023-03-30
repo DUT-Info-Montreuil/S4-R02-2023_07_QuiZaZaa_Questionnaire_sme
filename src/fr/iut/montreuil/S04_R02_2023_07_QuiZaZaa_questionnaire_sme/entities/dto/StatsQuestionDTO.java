@@ -9,6 +9,8 @@ public class StatsQuestionDTO {
         this.nbBonneReponses = nbBonneReponses;
         this.nbMauvaisesReponses = nbMauvaisesReponses;
     }
+    
+    /*----------------------------------*/
 
     public int getNbBonneReponses() {
         return nbBonneReponses;
@@ -25,4 +27,14 @@ public class StatsQuestionDTO {
     public void setNbMauvaisesReponses(int nbMauvaisesReponses) {
         this.nbMauvaisesReponses = nbMauvaisesReponses;
     }
+	
+	/*----------------------------------*/
+	
+	public void incrementerBonneReponse(int nbBonneReponse) {
+		this.nbBonneReponses+= nbBonneReponse;
+	}
+	
+	public void incrementerMauvaiseReponse(int nbMauvaiseReponse) {
+		this.nbMauvaisesReponses+= nbMauvaisesReponses;
+	}
 }

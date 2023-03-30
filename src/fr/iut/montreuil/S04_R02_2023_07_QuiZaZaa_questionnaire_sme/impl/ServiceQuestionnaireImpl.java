@@ -9,8 +9,11 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 
 import fr.iut.montreuil.S04_R02_2023_07_QuiZaZaa_questionnaire_sme.entities.bo.FichierQuestionBO;
+import fr.iut.montreuil.S04_R02_2023_07_QuiZaZaa_questionnaire_sme.entities.dto.LotStatsDTO;
 import fr.iut.montreuil.S04_R02_2023_07_QuiZaZaa_questionnaire_sme.entities.dto.QuestionDTO;
 import fr.iut.montreuil.S04_R02_2023_07_QuiZaZaa_questionnaire_sme.entities.dto.QuestionnaireDTO;
+import fr.iut.montreuil.S04_R02_2023_07_QuiZaZaa_questionnaire_sme.entities.dto.StatsQuestionDTO;
+import fr.iut.montreuil.S04_R02_2023_07_QuiZaZaa_questionnaire_sme.entities.dto.StatsQuestionnaireDTO;
 import fr.iut.montreuil.S04_R02_2023_07_QuiZaZaa_questionnaire_sme.entities.exception.QuestionnaireVideException;
 import fr.iut.montreuil.S04_R02_2023_07_QuiZaZaa_questionnaire_sme.modeles.IServiceQuestionnaire;
 import fr.iut.montreuil.S04_R02_2023_07_QuiZaZaa_questionnaire_sme.modeles.QuestionBOBuilder;
@@ -56,7 +59,7 @@ public class ServiceQuestionnaireImpl implements IServiceQuestionnaire {
 		return null;
 	}
 
-	/*--------*/
+	/*-------------------------------------*/
 
 	@Override
 	public QuestionDTO questionMeilleurTaux(QuestionnaireDTO questionnaire) throws QuestionnaireVideException {
@@ -100,9 +103,30 @@ public class ServiceQuestionnaireImpl implements IServiceQuestionnaire {
 		return bonneReponse/total;
 	}
 
+	/*-------------------------------------*/
+	
 	@Override
 	public void incrementationQuestionnaire(QuestionnaireDTO questionnaire) {
 		questionnaire.getStats().incrementationNbFoisJoue(1);
 	}
+	
+	@Override
+	public void incrementerReponses(int bonneReponse, int mauvaiseReponse, QuestionDTO question) {
+		question.getStats().incrementerBonneReponse(bonneReponse);
+		question.getStats().incrementerMauvaiseReponse(mauvaiseReponse);
+	}
+	
+	@Override
+	public LotStatsDTO FournirStatsQuestionnaire(QuestionnaireDTO questionnaire) {
+		StatsQuestionnaireDTO statsQuestionnaire = questionnaire.getStats();
+		ArrayList<StatsQuestionDTO> statsQuestionDTO = new ArrayList<StatsQuestionDTO>();
+		for (QuestionDTO quest : questionnaire.getListeQuestions()) {
+			statsQuestionDTO.add(quest.getStats());
+		}
+		return new LotStatsDTO(statsQuestionnaire, statsQuestionDTO); 
+	}
+
+	
+	
 
 }

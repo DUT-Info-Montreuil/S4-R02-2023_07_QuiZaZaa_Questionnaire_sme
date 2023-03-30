@@ -2,6 +2,7 @@ package fr.iut.montreuil.S04_R02_2023_07_QuiZaZaa_questionnaire_sme.tests.servic
 
 import java.util.ArrayList;
 
+import fr.iut.montreuil.S04_R02_2023_07_QuiZaZaa_questionnaire_sme.entities.dto.LotStatsDTO;
 import fr.iut.montreuil.S04_R02_2023_07_QuiZaZaa_questionnaire_sme.entities.dto.QuestionDTO;
 import fr.iut.montreuil.S04_R02_2023_07_QuiZaZaa_questionnaire_sme.entities.dto.QuestionnaireDTO;
 import fr.iut.montreuil.S04_R02_2023_07_QuiZaZaa_questionnaire_sme.entities.exception.QuestionnaireVideException;
@@ -47,6 +48,16 @@ public class ServiceQuestionnaireImplMokCasVide implements IServiceQuestionnaire
 	public void incrementationQuestionnaire(QuestionnaireDTO questionnaire) {
 		// Trivial
 		
+	}
+	@Override
+	public void incrementerReponses(int bonneReponse, int mauvaiseReponse, QuestionDTO question) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public LotStatsDTO FournirStatsQuestionnaire(QuestionnaireDTO questionnaire) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

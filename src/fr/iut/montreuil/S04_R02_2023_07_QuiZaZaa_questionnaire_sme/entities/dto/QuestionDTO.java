@@ -12,6 +12,8 @@ public class QuestionDTO {
 	private String reponse;
 	private String source;
 	private int difficulte;
+	
+	/*----------------------------------*/
 
 	public QuestionDTO(int idQuestion,  int idQuestionnaire, Langues langue, StatsQuestionDTO stats,
 					   String question, String reponse, String source, int difficulte) {
@@ -24,6 +26,8 @@ public class QuestionDTO {
 		this.source = source;
 		this.difficulte = difficulte;
 	}
+	
+	/*----------------------------------*/
 
 	public int getIdQuestion() {
 		return idQuestion;
@@ -67,4 +71,5 @@ public class QuestionDTO {
 	public void setDifficulte(int difficulte) {
 		this.difficulte = difficulte;
 	}
+
 }
