@@ -62,6 +62,6 @@ public class ServiceQuestionnaireImpl implements IServiceQuestionnaire {
 
     @Override
     public void incrementationQuestionnaire(QuestionnaireDTO questionnaire) {
-
+        questionnaire.getStats().incrNbFoisJoue();
     }
 }

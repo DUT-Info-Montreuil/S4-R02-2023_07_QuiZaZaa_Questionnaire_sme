@@ -10,9 +10,11 @@ public class StatsQuestionnaireDTO {
         questionnaireDTO = quest;
     }
 
-    public static int getNbFoisJoue() {return nbFoisJoue;}
+    public int getNbFoisJoue() {return nbFoisJoue;}
 
-    public static void setNbFoisJoue(int nbFoisJoue) {StatsQuestionnaireDTO.nbFoisJoue = nbFoisJoue;}
+    public void setNbFoisJoue(int nbFoisJoue) {StatsQuestionnaireDTO.nbFoisJoue = nbFoisJoue;}
+
+    public void incrNbFoisJoue(){StatsQuestionnaireDTO.nbFoisJoue += 1;}
 
     public QuestionnaireDTO getQuestionnaireDTO() {return questionnaireDTO;}
 
