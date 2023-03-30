@@ -45,7 +45,7 @@ public class ServiceQuestionnaireImplMokCasVide implements IServiceQuestionnaire
 
 	@Override
 	public void incrementationQuestionnaire(QuestionnaireDTO questionnaire) {
-		// TODO Auto-generated method stub
+		// Trivial
 		
 	}
 

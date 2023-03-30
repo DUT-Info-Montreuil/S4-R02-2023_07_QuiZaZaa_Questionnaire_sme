@@ -95,6 +95,8 @@ public class ServiceQuestionnaireImpl implements IServiceQuestionnaire {
 		int bonneReponse = question.getStats().getNbBonneReponses();
 		int mauvaiseReponse = question.getStats().getNbMauvaisesReponses();
 		double total = bonneReponse+mauvaiseReponse;
+		if (total == 0.0)
+			return 0;
 		return bonneReponse/total;
 	}
 
@@ -102,4 +104,5 @@ public class ServiceQuestionnaireImpl implements IServiceQuestionnaire {
 	public void incrementationQuestionnaire(QuestionnaireDTO questionnaire) {
 		questionnaire.getStats().incrementationNbFoisJoue(1);
 	}
+
 }

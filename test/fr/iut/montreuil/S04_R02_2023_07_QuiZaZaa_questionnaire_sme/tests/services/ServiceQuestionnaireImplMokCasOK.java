@@ -64,7 +64,7 @@ public class ServiceQuestionnaireImplMokCasOK implements IServiceQuestionnaire {
 
 	@Override
 	public void incrementationQuestionnaire(QuestionnaireDTO questionnaire) {
-		// Elle fait quoi cette méthode ?
+		//Trivial
 	}
 
 
