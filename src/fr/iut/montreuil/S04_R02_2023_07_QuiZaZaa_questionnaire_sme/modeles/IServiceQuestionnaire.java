@@ -24,4 +24,5 @@ public interface IServiceQuestionnaire {
 	public void incrementerReponses(int bonneReponse, int mauvaiseReponse, QuestionDTO question);
 	public LotStatsDTO FournirStatsQuestionnaire(QuestionnaireDTO questionnaire);
 	
+	
 }
